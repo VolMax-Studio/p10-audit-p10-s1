@@ -1,0 +1,13 @@
+=== TARGET GIT VERIFICATION ===
+Path: /home/volmax-studio/volmax-projects/iot2/p10-core
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+Current commit: 419175726025f2586dbb65ad92ec8812628880b5
+Tag commit: 419175726025f2586dbb65ad92ec8812628880b5
+Commit match: MATCH
+RATIFICATION.md sha256: 1070426027fdb6fda40bb791029bcfb2a1d59f36997fa1ae8d87683f0716f39d  /home/volmax-studio/volmax-projects/iot2/p10-core/RATIFICATION.md
+RATIFICATION.md bound archive hash check:
+**Artifact SHA-256:** `96a7e126068d35d29776a785d6581ef07c12f66a52d4a850b8464bf96ac41c88`  
+I, Ivan Nestorov, in my capacity as human ratifier ($H$) for the VolMax Studio P10 assurance framework, having verified the external adversarial gate verdict **PASS** and the immutable artifact hash `96a7e126068d35d29776a785d6581ef07c12f66a52d4a850b8464bf96ac41c88`, hereby declare the bounded composition layer:

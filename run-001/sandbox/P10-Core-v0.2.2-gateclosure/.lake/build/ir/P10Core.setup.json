@@ -1,0 +1,25 @@
+{"plugins": [],
+ "package": "p10_core",
+ "options": {},
+ "name": "P10Core",
+ "isModule": false,
+ "importArts":
+ {"P10Core.Spec.Core":
+  [["/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/.lake/build/lib/lean/P10Core/Spec/Core.olean"]],
+  "P10Core.Proofs.PositiveWitness":
+  [["/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/.lake/build/lib/lean/P10Core/Proofs/PositiveWitness.olean"]],
+  "P10Core.Proofs.FourEvidence":
+  [["/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/.lake/build/lib/lean/P10Core/Proofs/FourEvidence.olean"]],
+  "P10Core.Proofs.Composition":
+  [["/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/.lake/build/lib/lean/P10Core/Proofs/Composition.olean"]],
+  "P10Core.Model.Rules":
+  [["/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/.lake/build/lib/lean/P10Core/Model/Rules.olean"]],
+  "P10Core.Model.Calculus":
+  [["/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/.lake/build/lib/lean/P10Core/Model/Calculus.olean"]],
+  "P10Core.Instances.FourEvidence.Model":
+  [["/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/.lake/build/lib/lean/P10Core/Instances/FourEvidence/Model.olean"]],
+  "P10Core.Instances.FourEvidence.Composition":
+  [["/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/.lake/build/lib/lean/P10Core/Instances/FourEvidence/Composition.olean"]],
+  "P10Core.Instances.FourEvidence.Checker":
+  [["/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/.lake/build/lib/lean/P10Core/Instances/FourEvidence/Checker.olean"]]},
+ "dynlibs": []}

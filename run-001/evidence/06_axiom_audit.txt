@@ -1,0 +1,66 @@
+=== KERNEL AXIOM AUDIT ===
+Directory: /home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure
+--- Execution: lake env lean audit/AxiomAudit.lean ---
+'P10Core.Proofs.FourEvidence.checkCert_sound' depends on axioms: [propext, Quot.sound]
+'P10Core.Proofs.Composition.localSound1' depends on axioms: [propext]
+'P10Core.Proofs.Composition.localSound2' depends on axioms: [propext]
+'P10Core.Proofs.Composition.localSound3' depends on axioms: [propext, Quot.sound]
+'P10Core.Proofs.Composition.fidelity1' depends on axioms: [propext]
+'P10Core.Proofs.Composition.fidelity2' depends on axioms: [propext]
+'P10Core.Proofs.Composition.fidelity3' depends on axioms: [propext]
+'P10Core.Proofs.Composition.compositionObligations' depends on axioms: [propext, Quot.sound]
+'P10Core.Proofs.Composition.conditionalComposition' does not depend on any axioms
+'P10Core.Proofs.Composition.fourEvidenceComposes' depends on axioms: [propext, Quot.sound]
+'P10Core.Proofs.Composition.missingCertificate1CannotCompose' depends on axioms: [propext]
+'P10Core.Proofs.Composition.missingCertificate2CannotCompose' depends on axioms: [propext]
+'P10Core.Proofs.Composition.missingCertificate3CannotCompose' depends on axioms: [propext]
+'P10Core.Proofs.Composition.failedAgreementCannotCompose' depends on axioms: [propext]
+'P10Core.Proofs.Composition.brokenFidelityCannotCompose' depends on axioms: [propext]
+'P10Core.Proofs.PositiveWitness.positiveComposable' does not depend on any axioms
+'P10Core.Proofs.PositiveWitness.positiveGlobalSupport' depends on axioms: [propext, Quot.sound]
+'P10Core.Proofs.Composition.verifiedGlobalSupport_implies_originConditions' does not depend on any axioms
+--- Diff vs published AXIOM_AUDIT.md ---
+--- /dev/fd/62	2026-09-20 10:29:30.829849914 +0200
++++ /dev/fd/59	2026-09-20 10:29:30.829849914 +0200
+@@ -1,30 +0,0 @@
+-All `.lean` sources contain no `sorry`, `admit`, or user-declared `axiom`.
+-assumption is used. `conditionalComposition` and `verifiedGlobalSupport_implies_originConditions`
+-brokenFidelityCannotCompose: [propext]
+-checkCert_sound: [propext, Quot.sound]
+-compositionObligations: [propext, Quot.sound]
+-conditionalComposition: []
+-depend on **zero axioms**. `compositionObligations` proves the six named
+-failedAgreementCannotCompose: [propext]
+-fidelity1: [propext]
+-fidelity2: [propext]
+-fidelity3: [propext]
+-fourEvidenceComposes: [propext, Quot.sound]
+-It demonstrates mathematical inhabitation and non-vacuity for a lossless synthetic model;
+-it does **not** claim cryptographic collision resistance.
+-Lean version: 4.34.0.
+-localSound1: [propext]
+-localSound2: [propext]
+-localSound3: [propext, Quot.sound]
+-missingCertificate1CannotCompose: [propext]
+-missingCertificate2CannotCompose: [propext]
+-missingCertificate3CannotCompose: [propext]
+-obligations for this instance using standard foundational Lean axioms (`propext`, `Quot.sound`).
+-positiveComposable: []
+-positiveGlobalSupport: [propext, Quot.sound]
+-positive model supplies `concreteDigestModel`, whose digest contains the full
+-synthetic `Evidence` value (`structure Digest where evidence : Evidence`) and
+-The generic theorem accepts `DigestModel.injective` explicitly. The
+-These are Lean's surfaced foundational dependencies. No opaque local soundness
+-verifiedGlobalSupport_implies_originConditions: []
+-whose injectivity is proved constructively without axioms (`by intro a b h; cases h; rfl`).
+--- Specific Zero-Axiom Theorems Verification ---
+'P10Core.Proofs.Composition.conditionalComposition' does not depend on any axioms
+'P10Core.Proofs.PositiveWitness.positiveComposable' does not depend on any axioms
+'P10Core.Proofs.Composition.verifiedGlobalSupport_implies_originConditions' does not depend on any axioms
+--- Search for sorry / admit / user axiom in codebase ---
+grep for sorry:
+None found (OK)
+grep for admit:
+None found (OK)
+grep for axiom declaration:
+None found (OK)

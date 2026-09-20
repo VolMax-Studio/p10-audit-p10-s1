@@ -1,0 +1,9 @@
+=== ENVIRONMENT DUMP ===
+Timestamp: 2026-09-20T08:28:48+00:00
+Hostname: volmax-studio-HP-470-17-inch-G9-Notebook-PC
+OS: Linux volmax-studio-HP-470-17-inch-G9-Notebook-PC 7.0.0-31-generic #31~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Aug 10 09:38:02 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+Lean version: Lean (version 4.34.0, x86_64-unknown-linux-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)
+Lake version: Lake version 5.0.0-src+293d5d0 (Lean version 4.34.0)
+Git version: git version 2.43.0
+Freeze commit: 3fd073cb64b52214bfed65a4d07a4178a17b50b8
+Prereg SHA: 4ff99c98ef2a043c726a93e15ebe6a7a40737bf1225826f9c88a8ce181e9eec2  P10-AUDIT-P10-S1_PREREG.md

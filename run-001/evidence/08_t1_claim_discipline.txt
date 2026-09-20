@@ -1,0 +1,140 @@
+=== T1 CLAIM DISCIPLINE & PROSE TAXONOMY AUDIT ===
+Target Directory: /home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure
+Git Repo: /home/volmax-studio/volmax-projects/iot2/p10-core
+
+1. Truth_M Identifier Audit in all .lean files:
+COUNT: 0 occurrences of Truth_M in .lean files (PASS)
+
+2. Truth_M in prose surfaces (checking demarcation context):
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/reviews/GATE_v0.2.1-gatefix_CLAUDE_002.md:13:| `grep` for `sorry`/`admit`/`axiom`, and for `Truth_M` | none in any `.lean`; `Truth_M` appears only in prose |
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/reviews/GATE_v0.2.1-gatefix_CLAUDE_002.md:119:- **Item 4 — no `Truth_M`.** Confirmed by grep across all `.lean` sources: the identifier does not exist. `Supports` bottoms out in `Semantics.verifiedConditions`, instantiated to `verifiedSem (c,e) := (inspect e).satisfying = c.expected` — an internal, decidable arithmetic condition on the synthetic model, not an external truth predicate. The distinction the release draws is real.
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/reviews/GATE_v0.2.0-composition_CLAUDE_001.md:11:**Not received:** `P10Core/Spec/*`, `P10Core/Model/Calculus.lean`, `Instances/FourEvidence/Checker.lean`, `Proofs/FourEvidence.lean`, `lakefile.*`, `lean-toolchain`, `lake-manifest.json`, any `SHA256SUMS`. Every load-bearing identifier — `Supports`, `semantics`, `Truth_M`, `CheckCert`, `checkCert_sound`, `DigestModel`, `formalize`, `inspect`, `Claim`, `Evidence`, `Certificate`, `Verdict` — is defined in files that were not shipped. No Lean build was executed.
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/reviews/GATE_v0.2.0-composition_CLAUDE_001.md:21:- Evidence: `ls /mnt/user-data/uploads/` returns 4 files. `Proofs/Composition.lean` line 24 calls `FourEvidence.checkCert_sound`, whose statement I have never seen. Any hidden assumption in this release would be located precisely there — in the unseen seed, not in the composition layer. Item 3 ("does not hide equivalent assumptions elsewhere") is exactly the item this gap makes unanswerable. Item 4 likewise: `Truth_M` is syntactically absent from both reviewed files, but whether `Supports` or `semantics` are *defined* through it is not determinable.
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/RELEASE_NOTES.md:31:- No `Truth_M` predicate in any `.lean` source.
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/scripts/verify.sh:12:  # Verify Truth_M does not appear in any lean code
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/scripts/verify.sh:13:  if rg -n '\bTruth_M\b' -g '*.lean' P10Core audit reviews; then
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/scripts/verify.sh:14:    echo 'Forbidden Truth_M identifier found in Lean source.' >&2
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/scripts/verify.sh:24:      grep -nE '\bTruth_M\b' {} +; then
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/scripts/verify.sh:25:    echo 'Forbidden Truth_M identifier found in Lean source.' >&2
+
+3. Boundary B-1 (Demarcation in README.md §1):
+
+4. Boundary B-2 (Digest Scope in GATE_RESPONSE.md §2 & AXIOM_AUDIT.md):
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/GATE_RESPONSE.md-35-
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/GATE_RESPONSE.md-36-**Epistemic Clarification:**  
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/GATE_RESPONSE.md:37:The `Digest` type was intentionally redefined to enable a constructive, machine-checked non-vacuity witness without postulating an unverified cryptographic collision-resistance axiom. In this synthetic `FourEvidence` instance, the digest operation is a lossless wrapper around evidence; it demonstrates that the protocol pipeline and composition obligations are satisfiable by concrete mathematical objects, but it **does not** model a cryptographic compression function or cryptographic collision resistance.
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/GATE_RESPONSE.md-38-
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/GATE_RESPONSE.md-39-### Baseline Provenance & Scope of Predecessor Invariance (G-02)
+--
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/AXIOM_AUDIT.md-40-whose injectivity is proved constructively without axioms (`by intro a b h; cases h; rfl`).
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/AXIOM_AUDIT.md-41-It demonstrates mathematical inhabitation and non-vacuity for a lossless synthetic model;
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/AXIOM_AUDIT.md:42:it does **not** claim cryptographic collision resistance.
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/AXIOM_AUDIT.md-43-
+
+5. Boundary B-3 (Predicate Collapse in README.md §3.Layer2.6 & GATE_CLOSURE.md):
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/GATE_CLOSURE.md-14-| **G-02** | Baseline manifest path & coverage defect | **CLOSED** | `baselines/P10-Core-v0.2.0-composition.zip`, `manifests/SHA256SUMS_v0.2.0-composition` |
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/GATE_CLOSURE.md-15-| **G-03** | Manifest coverage & anchor | **CLOSED** | `manifests/SHA256SUMS_v0.2.2-gateclosure`, `scripts/verify.sh` |
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/GATE_CLOSURE.md:16:| **G-04** | Collapsed predicates in synthetic instance | **DISCLOSED** | `README.md` (§3.Layer2.6), `RELEASE_NOTES.md` |
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/GATE_CLOSURE.md-17-| **G-05** | `GlobalSupport` semantics & abstention | **DISCLOSED & DEMONSTRATED** | `README.md` (§3.Layer2.3), `reviews/GateProbe.lean` (`probeA`) |
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/GATE_CLOSURE.md-18-| **G-06** | Origin condition theorem promotion (`probeF`) | **CLOSED** | `P10Core/Proofs/Composition.lean` (`verifiedGlobalSupport_implies_originConditions`) |
+--
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/GATE_CLOSURE.md-41-- **Verification:** Both compile cleanly (`exit 0`) against the built library via `lake env lean`.
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/GATE_CLOSURE.md-42-
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/GATE_CLOSURE.md:43:### G-04: Collapsed Semantics Disclosure
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/GATE_CLOSURE.md:44:- `README.md` explicitly discloses the 4 collapsed/redundant predicates of the synthetic `FourEvidence` instance:
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/GATE_CLOSURE.md-45-  1. `runCompleted := fun _ _ => True` (discharged by `trivial`);
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/GATE_CLOSURE.md-46-  2. `checksSucceeded := fun _ _ => True` (discharged by `trivial`);
+
+6. Boundary B-4 (Bounded Composition in README.md §5):
+187-2. **No Global P10 Soundness:** Proved for the bounded `FourEvidence` multi-stage pipeline, not as a universal metatheorem over arbitrary untyped programs.
+188-3. **No Cryptographic Collision Resistance:** Evidence digests remain in the abstract model.
+189:4. **No Unbounded Composition:** The composition theorem covers the specified finite 4-stage chain; unbounded transfinite progressions are explicitly bounded by Gödel/Löb limitative results.
+190-
+191----
+
+7. Boundary B-5 (Non-Global Soundness in README.md §5):
+185-To prevent overclaims and maintain strict scientific hygiene:
+186-1. **No Claim of Ontological Truth:** Verifying composition proves that the transition chain faithfully preserves agreements and fidelity down to `Supports`; it does not prove physical truth outside the specified bridge assumptions ($B_i$).
+187:2. **No Global P10 Soundness:** Proved for the bounded `FourEvidence` multi-stage pipeline, not as a universal metatheorem over arbitrary untyped programs.
+188-3. **No Cryptographic Collision Resistance:** Evidence digests remain in the abstract model.
+189-4. **No Unbounded Composition:** The composition theorem covers the specified finite 4-stage chain; unbounded transfinite progressions are explicitly bounded by Gödel/Löb limitative results.
+
+8. Boundary B-6 (Witness Discipline in README.md & GATE_CLOSURE.md):
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/README.md-74-
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/README.md-75-### Layer 2: The Bounded Composition Layer (`v0.2.1-gatefix`)
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/README.md:76:*Mechanized in [`P10Core/Proofs/Composition.lean`](P10Core/Proofs/Composition.lean), [`P10Core/Instances/FourEvidence/Composition.lean`](P10Core/Instances/FourEvidence/Composition.lean), and [`P10Core/Proofs/PositiveWitness.lean`](P10Core/Proofs/PositiveWitness.lean)*:
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/README.md-77-
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/README.md-78-#### 1. Typed Multi-Stage Pipeline
+--
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/README.md-95-- A semantic preservation relation (`AgreementRel1`, `AgreementRel2`, `AgreementRel3`);
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/README.md-96-- A claim/evidence fidelity relation (`FidelityRel1`, `FidelityRel2`, `FidelityRel3`);
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/README.md:97:- A witness-bearing transition certificate (`TransitionCertificate1`, `TransitionCertificate2`, `TransitionCertificate3`).  
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/README.md:98:  *G-07 Disclosure:* Certificate witnesses (`targetWitness`, `checkedWitness`, `certificateWitness`) **gate acceptance and bind the certificate to the stage it certifies** (`check = false` upon mismatch); they serve as structural guards rather than redundant semantic premises in theorem conclusions.
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/README.md-99-
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/README.md-100-#### 2. Local Soundness & Fidelity Obligations
+--
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/README.md-145-- **`brokenFidelityCannotCompose`:** If claim/evidence fidelity $\neg\mathrm{FidelityRel3}$ is broken, $\neg\mathrm{Composable}$.
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/README.md-146-
+
+9. RATIFICATION.md Claim Scope Check (Class I surface on git tag):
+# P10-Core v0.2.2-gateclosure — Human Ratification Record (H)
+
+**Protocol Step:** Terminal Human Ratification ($H$)  
+**Ratifier:** Ivan Nestorov (ORCID: [`0009-0006-7940-9539`](https://orcid.org/0009-0006-7940-9539))  
+**Date:** 2026-09-20  
+**Artifact Archive:** `P10-Core-v0.2.2-gateclosure.zip`  
+**Artifact SHA-256:** `96a7e126068d35d29776a785d6581ef07c12f66a52d4a850b8464bf96ac41c88`  
+**External Gate:** Adversarial External Gate (Claude Gate Closure) — **PASS**  
+**Milestone:** `P10-Core — Gate-Closed Bounded Composition`  
+**Decision:** **RATIFIED**  
+
+---
+
+## 1. Context & Adversarial Verification Lineage
+
+This formal ratification marks the closure of the bounded composition milestone for **P10-Core**.
+
+The assurance chain has progressed through an adversarial re-gating sequence:
+$$\text{v0.1.0 Seed} \longrightarrow \text{v0.2.0 Composition} \longrightarrow \mathbf{BLOCKED} \longrightarrow \text{v0.2.1 Gatefix} \longrightarrow \mathbf{PASS\ WITH\ LIMITATIONS} \longrightarrow \text{v0.2.2 Closure} \longrightarrow \mathbf{PASS}$$
+
+The final adversarial gate performed an independent clean-room build from the submission archive, verified kernel axiom signatures, executed compile-time evaluation checks, confirmed that all 30 manifest files matched, and independently compiled the 6-probe adversarial test suite.
+
+---
+
+## 2. Scope Ratified
+
+The human ratifier ($H$) formally ratifies the mathematical and procedural validity of the following machine-checked deliverables:
+
+1. **Bounded Synthetic Instance:** The `FourEvidence` formal domain model and executable certificate checker.
+2. **Checker Soundness:** Machine-checked theorem `checkCert_sound` guaranteeing declarative support under frozen protocol rules.
+3. **Bounded Typed Composition:** The 4-stage pipeline ($\text{Stage0} \to \text{Stage1} \to \text{Stage2} \to \text{Stage3}$) with six discharged local obligations (`localSound1..3`, `fidelity1..3`).
+4. **Conditional & Fully Discharged Composition Theorems:** `conditionalComposition` (0 axioms) and `fourEvidenceComposes`.
+5. **Origin-Conditions Theorem:** Machine-checked theorem `verifiedGlobalSupport_implies_originConditions` (0 axioms) proving that when a composed pipeline concludes with verdict `Verified`, the empirical condition `verifiedSem` is mathematically guaranteed on Stage 0's original claim and evidence pair.
+6. **Negative Adversarial Contrapositives:** Strengthened refutation theorems (`missingCertificate1..3CannotCompose`, `failedAgreementCannotCompose`, `brokenFidelityCannotCompose`) proving `¬Composable`.
+7. **Adversarial Gate Probes:** Clean compilation and verification of Claude's verbatim probe suite (`GateProbe_CLAUDE_002_original.lean` [SHA-256: `2427da6e...`] and `GateProbeB.lean` [SHA-256: `3c41bd86...`]).
+
+---
+
+## 3. Explicit Epistemic Exclusions (Preserved Boundaries)
+
+In accordance with P10 scientific hygiene, ratification is strictly scoped. The following are **explicitly excluded** and not claimed:
+
+1. **No Semantic Adequacy Claim:** Ratification does not attest to the empirical or real-world adequacy of the `formalize` or `inspect` functions beyond the formal synthetic specification.
+2. **No Cryptographic Guarantees:** The synthetic `Digest` model is a lossless identity-like mathematical wrapper proving non-vacuity and injectivity; it does not model cryptographic compression or physical collision resistance.
+3. **No Unbounded Composition:** Ratification covers solely the finite 4-stage chain; unbounded transfinite progressions are explicitly bounded by Gödel/Löb limitative theorems.
+4. **No Global P10 Soundness:** Proved for the bounded instance, not as a universal metatheorem over arbitrary untyped programs.
+5. **No Ontological Truth:** In accordance with the foundational P10 demarcation:
+   $$\mathrm{Truth}_M(c) \neq \mathrm{Supports}_P(e, c, \kappa, v)$$
+   Ratification attests to the protocol's evidentiary support, never metaphysical truth.
+
+---
+
+## 4. Formal Act of Ratification
+
+I, Ivan Nestorov, in my capacity as human ratifier ($H$) for the VolMax Studio P10 assurance framework, having verified the external adversarial gate verdict **PASS** and the immutable artifact hash `96a7e126068d35d29776a785d6581ef07c12f66a52d4a850b8464bf96ac41c88`, hereby declare the bounded composition layer:
+
+$$\boxed{\mathbf{RATIFIED}}$$
+
+The release tag `v0.2.2-gateclosure` is authorized to be bound to this immutable tree.
+No further code changes are permitted within the composition milestone.
+Development proceeds strictly to the pre-registration specification of **`P10-audit-P10`**.

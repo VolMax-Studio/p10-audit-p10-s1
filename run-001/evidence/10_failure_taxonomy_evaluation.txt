@@ -1,0 +1,36 @@
+=== FAILURE TAXONOMY EVALUATION (F-01 through F-08) ===
+Date: 2026-09-20T08:29:55+00:00
+
+F-01 (Proof Integrity Breach):
+  sorry/admit/user-axiom in .lean files: NONE FOUND (PASS)
+
+F-02 (Axiom Creep):
+  conditionalComposition: 0 axioms (PASS)
+  verifiedGlobalSupport_implies_originConditions: 0 axioms (PASS)
+  positiveComposable: 0 axioms (PASS)
+
+F-03 (Origin Condition Disconnect):
+  verifiedGlobalSupport_implies_originConditions concludes: verifiedSem (x0.claim, x0.evidence) directly (PASS)
+
+F-04 (Claim-Boundary Breach):
+  B-1..B-6 explicit in mandatory carriers and preserved in aggregate across Classes I-V (PASS)
+
+F-05 (Build Non-Determinism):
+  lake build completed with 12/12 jobs, #eval check1..3 evaluated to true / true / true (PASS)
+
+F-06 (Adversarial Probe Failure):
+  Probe 1 SHA matches and compiled with exit code 0 (PASS)
+  Probe 2 SHA matches and compiled with exit code 0 (PASS)
+
+F-07 (Manifest Fracture):
+  SHA256SUMS_v0.2.2-gateclosure: 30/30 files OK (PASS)
+
+F-08 (Historical Baseline Mutation):
+  baselines/P10-Core-v0.2.0-composition.zip matches a86501aab0f35d055087d5793b897260635b441fb51d12dc6d99cd0229a0fc89 (PASS)
+
+=== PROCEDURAL ERROR CHECKS (§7) ===
+1. TargetMutationFault: Target git ref tags/v0.2.2-gateclosure (commit 4191757...) UNCHANGED (PASS)
+2. EnvironmentMismatchFault: Pinned Lean 4.34.0 / Lake 5.0.0 (PASS)
+3. PreregistrationFractureFault: P10-AUDIT-P10-S1_PREREG.md SHA 4ff99c98... UNCHANGED (PASS)
+4. PrematureExecutionFault: Execution commenced ONLY after formal human freeze authorization (PASS)
+5. SelfApplicationBoundaryFault: No global soundness or self-consistency claims asserted (PASS)

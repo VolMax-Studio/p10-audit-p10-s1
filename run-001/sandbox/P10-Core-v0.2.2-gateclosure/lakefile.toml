@@ -1,0 +1,6 @@
+name = "p10_core"
+version = "0.2.1-gatefix"
+defaultTargets = ["P10Core"]
+
+[[lean_lib]]
+name = "P10Core"

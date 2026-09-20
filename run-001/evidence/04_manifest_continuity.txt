@@ -1,0 +1,44 @@
+=== MANIFEST AND BASELINE CONTINUITY AUDIT ===
+Target Directory: /home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure
+
+1. Candidate Manifest Check (SHA256SUMS_v0.2.2-gateclosure):
+./assets/p10_core_banner.png: OK
+./audit/AxiomAudit.lean: OK
+./AXIOM_AUDIT.md: OK
+./baselines/P10-Core-v0.2.0-composition.zip: OK
+./baselines/P10-Core-v0.2.0-composition.zip.sha256: OK
+./GATE_CLOSURE.md: OK
+./GATE_RESPONSE.md: OK
+./lake-manifest.json: OK
+./lakefile.toml: OK
+./lean-toolchain: OK
+./manifests/SHA256SUMS_v0.2.0-composition: OK
+./manifests/SHA256SUMS_v0.2.1-gatefix: OK
+./P10Core/Instances/FourEvidence/Checker.lean: OK
+./P10Core/Instances/FourEvidence/Composition.lean: OK
+./P10Core/Instances/FourEvidence/Model.lean: OK
+./P10Core.lean: OK
+./P10Core/Model/Calculus.lean: OK
+./P10Core/Model/Rules.lean: OK
+./P10Core/Proofs/Composition.lean: OK
+./P10Core/Proofs/FourEvidence.lean: OK
+./P10Core/Proofs/PositiveWitness.lean: OK
+./P10Core/Spec/Core.lean: OK
+./README.md: OK
+./RELEASE_NOTES.md: OK
+./reviews/GATE_v0.2.0-composition_CLAUDE_001.md: OK
+./reviews/GATE_v0.2.1-gatefix_CLAUDE_002.md: OK
+./reviews/GateProbe.lean: OK
+./reviews/GateProbe_CLAUDE_002_original.lean: OK
+./reviews/GateProbeB.lean: OK
+./scripts/verify.sh: OK
+Candidate manifest exit code: 0
+
+2. Baseline Archive SHA-256 Check:
+a86501aab0f35d055087d5793b897260635b441fb51d12dc6d99cd0229a0fc89  /home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/baselines/P10-Core-v0.2.0-composition.zip
+Expected Baseline: a86501aab0f35d055087d5793b897260635b441fb51d12dc6d99cd0229a0fc89
+
+3. Historical v0.2.1-gatefix Manifest Baseline Line Check:
+./baselines/P10-Core-v0.2.0-composition.zip: OK
+./baselines/P10-Core-v0.2.0-composition.zip.sha256: OK
+Baseline line in v0.2.1 manifest exit code: 0

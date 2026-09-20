@@ -1,0 +1,10 @@
+=== ADVERSARIAL GATE PROBES AUDIT ===
+Directory: /home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure
+--- Probe 1: reviews/GateProbe_CLAUDE_002_original.lean ---
+2427da6ec2cd545baa541885929782d5601130db9eba4e9a3268a763e401495e  reviews/GateProbe_CLAUDE_002_original.lean
+Expected SHA-256: 2427da6ec2cd545baa541885929782d5601130db9eba4e9a3268a763e401495e
+Probe 1 exit code: 0
+--- Probe 2: reviews/GateProbeB.lean ---
+3c41bd86f905fec1ea3175c2e1878e573bd32b8681e61b4a9480b37aab9f1310  reviews/GateProbeB.lean
+Expected SHA-256: 3c41bd86f905fec1ea3175c2e1878e573bd32b8681e61b4a9480b37aab9f1310
+Probe 2 exit code: 0

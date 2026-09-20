@@ -1,0 +1,54 @@
+=== T3 PROCEDURAL SELF-APPLICATION & DEMARCATION AUDIT ===
+Directory: /home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure
+
+1. Origin-Conditions Theorem Structure in P10Core/Proofs/Composition.lean:
+140:theorem verifiedGlobalSupport_implies_originConditions
+141-    (P : Protocol) (x0 : Stage0) (x1 : Stage1) (x2 : Stage2) (x3 : Stage3)
+142-    (h : GlobalSupport P x0 x1 x2 x3) (hv : x3.verdict = Verdict.verified) :
+143-    verifiedSem (x0.claim, x0.evidence) := by
+144-  have hSupp : Supports (semantics P) x3.evidence x3.claim x3.certificate .verified := by
+145-    have pSupp := h.protocolSupport
+146-    rw [hv] at pSupp
+147-    exact pSupp
+148-  have hCond := FourEvidence.supports_verified_implies_conditions P x3.evidence x3.claim x3.certificate hSupp
+149-  have hcp := h.claimPreserved
+150-  have hep := h.evidencePreserved
+
+2. Check conclusion targets x0.claim and x0.evidence directly:
+140-theorem verifiedGlobalSupport_implies_originConditions
+141-    (P : Protocol) (x0 : Stage0) (x1 : Stage1) (x2 : Stage2) (x3 : Stage3)
+142-    (h : GlobalSupport P x0 x1 x2 x3) (hv : x3.verdict = Verdict.verified) :
+143:    verifiedSem (x0.claim, x0.evidence) := by
+144-  have hSupp : Supports (semantics P) x3.evidence x3.claim x3.certificate .verified := by
+145-    have pSupp := h.protocolSupport
+146-    rw [hv] at pSupp
+
+3. Axiom dependency of verifiedGlobalSupport_implies_originConditions:
+'P10Core.Proofs.Composition.verifiedGlobalSupport_implies_originConditions' does not depend on any axioms
+
+4. Check that FourEvidence model is synthetic & bounded (not universal verifier):
+1-import P10Core.Model.Calculus
+2-import P10Core.Model.Rules
+3-
+4:namespace P10Core.Instances.FourEvidence
+5-
+6-open P10Core.Spec P10Core.Model
+7-
+--
+123-  certifiesUnfalsifiable := fun κ => κ.verdict = .unfalsifiableAsStated
+124-  certifiesBlocker := fun κ b => κ.verdict = .deferred ∧ b = .sourceUnavailable
+125-
+126:end P10Core.Instances.FourEvidence
+
+5. Anti-circularity audit: External gate review status in evidence set E*:
+total 44K
+-rw-rw-r-- 1 volmax-studio volmax-studio 2.0K Sep 20 09:31 GateProbeB.lean
+-rw-rw-r-- 1 volmax-studio volmax-studio 3.6K Sep 20 09:31 GateProbe_CLAUDE_002_original.lean
+-rw-r--r-- 1 volmax-studio volmax-studio 4.0K Sep 20 09:31 GateProbe.lean
+-rw-r--r-- 1 volmax-studio volmax-studio  13K Sep 20 09:31 GATE_v0.2.0-composition_CLAUDE_001.md
+-rw-r--r-- 1 volmax-studio volmax-studio  14K Sep 20 09:31 GATE_v0.2.1-gatefix_CLAUDE_002.md
+125----
+126-
+127:## VERDICT: **PASS WITH LIMITATIONS**
+128-
+129-The Lean artifact passes. No finding is theorem-breaking; all four Gate 001 blockers are materially discharged, and for the first time in this track I discharged the build and the axiom audit by executing them rather than reading a transcript.

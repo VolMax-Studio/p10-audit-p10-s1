@@ -1,0 +1,9 @@
+=== PUBLIC ASSET FETCH & EXTRACTION ===
+URL: https://github.com/VolMax-Studio/p10-core/releases/download/v0.2.2-gateclosure/P10-Core-v0.2.2-gateclosure.zip
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0 12  730k   12 93865    0     0  33460      0  0:00:22  0:00:02  0:00:20 80640100  730k  100  730k    0     0   231k      0  0:00:03  0:00:03 --:--:--  480k
+Downloaded SHA-256: 96a7e126068d35d29776a785d6581ef07c12f66a52d4a850b8464bf96ac41c88  run-001/evidence/P10-Core-v0.2.2-gateclosure.zip
+Expected SHA-256:   96a7e126068d35d29776a785d6581ef07c12f66a52d4a850b8464bf96ac41c88
+Unzip complete. File count in sandbox: 31

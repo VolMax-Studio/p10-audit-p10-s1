@@ -1,0 +1,15 @@
+{"plugins": [],
+ "package": "p10_core",
+ "options": {},
+ "name": "P10Core.Instances.FourEvidence.Checker",
+ "isModule": false,
+ "importArts":
+ {"P10Core.Spec.Core":
+  [["/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/.lake/build/lib/lean/P10Core/Spec/Core.olean"]],
+  "P10Core.Model.Rules":
+  [["/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/.lake/build/lib/lean/P10Core/Model/Rules.olean"]],
+  "P10Core.Model.Calculus":
+  [["/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/.lake/build/lib/lean/P10Core/Model/Calculus.olean"]],
+  "P10Core.Instances.FourEvidence.Model":
+  [["/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/.lake/build/lib/lean/P10Core/Instances/FourEvidence/Model.olean"]]},
+ "dynlibs": []}
