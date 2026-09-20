@@ -1,0 +1,15 @@
+{"plugins": [],
+ "package": "p10_core",
+ "options": {},
+ "name": "P10Core.Instances.FourEvidence.Checker",
+ "isModule": false,
+ "importArts":
+ {"P10Core.Spec.Core":
+  [["/workspace/.lake/build/lib/lean/P10Core/Spec/Core.olean"]],
+  "P10Core.Model.Rules":
+  [["/workspace/.lake/build/lib/lean/P10Core/Model/Rules.olean"]],
+  "P10Core.Model.Calculus":
+  [["/workspace/.lake/build/lib/lean/P10Core/Model/Calculus.olean"]],
+  "P10Core.Instances.FourEvidence.Model":
+  [["/workspace/.lake/build/lib/lean/P10Core/Instances/FourEvidence/Model.olean"]]},
+ "dynlibs": []}

@@ -1,0 +1,34 @@
+=== EV-12: FULL-TREE LEAN INTEGRITY SCAN ===
+Target Directory: /home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure
+Scanning every *.lean file across entire tree (including reviews/)...
+
+--- 1. List of all .lean files inspected ---
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/audit/AxiomAudit.lean
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/P10Core/Instances/FourEvidence/Checker.lean
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/P10Core/Instances/FourEvidence/Composition.lean
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/P10Core/Instances/FourEvidence/Model.lean
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/P10Core.lean
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/P10Core/Model/Calculus.lean
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/P10Core/Model/Rules.lean
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/P10Core/Proofs/Composition.lean
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/P10Core/Proofs/FourEvidence.lean
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/P10Core/Proofs/PositiveWitness.lean
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/P10Core/Spec/Core.lean
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/reviews/GateProbeB.lean
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/reviews/GateProbe_CLAUDE_002_original.lean
+/home/volmax-studio/volmax-projects/iot2/p10-audit-p10-s1/run-001/sandbox/P10-Core-v0.2.2-gateclosure/reviews/GateProbe.lean
+Total .lean files found: 14
+
+--- 2. Scan for 'sorry' ---
+Result: 0 occurrences of 'sorry' across all 14 files (PASS)
+
+--- 3. Scan for 'admit' ---
+Result: 0 occurrences of 'admit' across all 14 files (PASS)
+
+--- 4. Scan for user-declared 'axiom' (regex: ^[[:space:]]*axiom[[:space:]]+) ---
+Result: 0 occurrences of user-declared 'axiom' across all 14 files (PASS)
+
+--- 5. Scan for 'Truth_M' identifier ---
+Result: 0 occurrences of 'Truth_M' across all 14 files (PASS)
+
+=== FULL-TREE SCAN COMPLETED: ZERO DEFECTS FOUND ===

@@ -1,0 +1,83 @@
+=== EV-11: CLEAN-ROOM CONTAINER EXECUTION ===
+Container OS: PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+Kernel: Linux 535507172ade 7.0.0-31-generic #31~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Aug 10 09:38:02 UTC 2 x86_64 GNU/Linux
+User: root
+Environment: clean isolated container execution
+Lean: Lean (version 4.34.0, x86_64-unknown-linux-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)
+Lake: Lake version 5.0.0-src+293d5d0 (Lean version 4.34.0)
+--- 1. Candidate Manifest Check inside container ---
+./assets/p10_core_banner.png: OK
+./audit/AxiomAudit.lean: OK
+./AXIOM_AUDIT.md: OK
+./baselines/P10-Core-v0.2.0-composition.zip: OK
+./baselines/P10-Core-v0.2.0-composition.zip.sha256: OK
+./GATE_CLOSURE.md: OK
+./GATE_RESPONSE.md: OK
+./lake-manifest.json: OK
+./lakefile.toml: OK
+./lean-toolchain: OK
+./manifests/SHA256SUMS_v0.2.0-composition: OK
+./manifests/SHA256SUMS_v0.2.1-gatefix: OK
+./P10Core/Instances/FourEvidence/Checker.lean: OK
+./P10Core/Instances/FourEvidence/Composition.lean: OK
+./P10Core/Instances/FourEvidence/Model.lean: OK
+./P10Core.lean: OK
+./P10Core/Model/Calculus.lean: OK
+./P10Core/Model/Rules.lean: OK
+./P10Core/Proofs/Composition.lean: OK
+./P10Core/Proofs/FourEvidence.lean: OK
+./P10Core/Proofs/PositiveWitness.lean: OK
+./P10Core/Spec/Core.lean: OK
+./README.md: OK
+./RELEASE_NOTES.md: OK
+./reviews/GATE_v0.2.0-composition_CLAUDE_001.md: OK
+./reviews/GATE_v0.2.1-gatefix_CLAUDE_002.md: OK
+./reviews/GateProbe.lean: OK
+./reviews/GateProbe_CLAUDE_002_original.lean: OK
+./reviews/GateProbeB.lean: OK
+./scripts/verify.sh: OK
+Candidate manifest: 30/30 OK
+--- 2. Lake Build inside container ---
+✔ [2/12] Built P10Core.Model.Rules (336ms)
+✔ [3/12] Built P10Core.Spec.Core (422ms)
+✔ [4/12] Built P10Core.Model.Calculus (245ms)
+✔ [5/12] Built P10Core.Instances.FourEvidence.Model (442ms)
+✔ [6/12] Built P10Core.Instances.FourEvidence.Checker (205ms)
+✔ [7/12] Built P10Core.Proofs.FourEvidence (322ms)
+✔ [8/12] Built P10Core.Instances.FourEvidence.Composition (533ms)
+✔ [9/12] Built P10Core.Proofs.Composition (232ms)
+ℹ [10/12] Built P10Core.Proofs.PositiveWitness (276ms)
+info: P10Core/Proofs/PositiveWitness.lean:73:0: true
+info: P10Core/Proofs/PositiveWitness.lean:74:0: true
+info: P10Core/Proofs/PositiveWitness.lean:75:0: true
+✔ [11/12] Built P10Core (246ms)
+Build completed successfully (12 jobs).
+Lake build completed successfully (12 jobs)
+--- 3. Axiom Audit inside container (18 rows line-for-line) ---
+'P10Core.Proofs.FourEvidence.checkCert_sound' depends on axioms: [propext, Quot.sound]
+'P10Core.Proofs.Composition.localSound1' depends on axioms: [propext]
+'P10Core.Proofs.Composition.localSound2' depends on axioms: [propext]
+'P10Core.Proofs.Composition.localSound3' depends on axioms: [propext, Quot.sound]
+'P10Core.Proofs.Composition.fidelity1' depends on axioms: [propext]
+'P10Core.Proofs.Composition.fidelity2' depends on axioms: [propext]
+'P10Core.Proofs.Composition.fidelity3' depends on axioms: [propext]
+'P10Core.Proofs.Composition.compositionObligations' depends on axioms: [propext, Quot.sound]
+'P10Core.Proofs.Composition.conditionalComposition' does not depend on any axioms
+'P10Core.Proofs.Composition.fourEvidenceComposes' depends on axioms: [propext, Quot.sound]
+'P10Core.Proofs.Composition.missingCertificate1CannotCompose' depends on axioms: [propext]
+'P10Core.Proofs.Composition.missingCertificate2CannotCompose' depends on axioms: [propext]
+'P10Core.Proofs.Composition.missingCertificate3CannotCompose' depends on axioms: [propext]
+'P10Core.Proofs.Composition.failedAgreementCannotCompose' depends on axioms: [propext]
+'P10Core.Proofs.Composition.brokenFidelityCannotCompose' depends on axioms: [propext]
+'P10Core.Proofs.PositiveWitness.positiveComposable' does not depend on any axioms
+'P10Core.Proofs.PositiveWitness.positiveGlobalSupport' depends on axioms: [propext, Quot.sound]
+'P10Core.Proofs.Composition.verifiedGlobalSupport_implies_originConditions' does not depend on any axioms
+Comparing canonical extraction vs published AXIOM_AUDIT.md (strict diff without ignore)...
+Axiom audit matches published table 18/18 rows line-for-line: EXACT MATCH
+--- 4. Adversarial Gate Probes inside container ---
+Compiling GateProbe_CLAUDE_002_original.lean...
+GateProbe_CLAUDE_002_original.lean: exit 0
+Compiling GateProbeB.lean...
+GateProbeB.lean: exit 0
+=== CONTAINER EXECUTION COMPLETED WITH EXIT 0 ===
+Container reproduction exit code: 0

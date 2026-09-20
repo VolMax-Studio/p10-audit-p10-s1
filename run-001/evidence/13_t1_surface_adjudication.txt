@@ -1,0 +1,206 @@
+=== EV-13: COMPLETE T1 SURFACE ADJUDICATION (CLASSES I - V) ===
+Target Ref: VolMax-Studio/p10-core@v0.2.2-gateclosure (commit 419175726025f2586dbb65ad92ec8812628880b5)
+Total Surfaces Audited: 17
+
+================================================================================
+Surface: README.md
+Class: Class I
+SHA-256: 75d0f054ff290f9bc18c685cd8064d346da6d73d2bf86618ceba2e54b9c62f00
+Line Count: 248
+Contradiction Found: NO
+Boundary Applicability & Supporting Citations (10 relevant citations):
+  [B-1] Line 22: Rather than acting as an ungrounded or autonomous "truth machine," P10-Core formalizes the strict mathematical demarcati
+  [B-4] Line 75: ### Layer 2: The Bounded Composition Layer (`v0.2.1-gatefix`)
+  [B-6] Line 97: - A witness-bearing transition certificate (`TransitionCertificate1`, `TransitionCertificate2`, `TransitionCertificate3`
+  [B-6] Line 98: *G-07 Disclosure:* Certificate witnesses (`targetWitness`, `checkedWitness`, `certificateWitness`) **gate acceptance and
+  [B-2] Line 149: *G-01 Disclosure:* The synthetic `Digest` structure is a lossless representation (`evidence : Evidence`) demonstrating m
+  [B-5] Line 154: #### 6. Synthetic Instance Disclosure (G-04)
+  [B-1] Line 186: 1. **No Claim of Ontological Truth:** Verifying composition proves that the transition chain faithfully preserves agreem
+  [B-5] Line 187: 2. **No Global P10 Soundness:** Proved for the bounded `FourEvidence` multi-stage pipeline, not as a universal metatheor
+  ... (2 additional supporting citations in file)
+
+================================================================================
+Surface: RELEASE_NOTES.md
+Class: Class I
+SHA-256: 4a7e90208414bf7dcfd50c3a28e61fc03b6ddfd84434244c27c3449e5f392dfa
+Line Count: 32
+Contradiction Found: NO
+Boundary Applicability & Supporting Citations (5 relevant citations):
+  [B-2] Line 17: `README.md`, and `AXIOM_AUDIT.md` that the synthetic `Digest` structure is a lossless
+  [B-3] Line 21: - **Predicate Disclosures:** Formally disclosed the 4 collapsed/redundant predicates in the
+  [B-6] Line 25: - **Witness Gating Discipline:** Disclosed that transition certificate witnesses gate transition acceptance
+  [B-1] Line 31: - No `Truth_M` predicate in any `.lean` source.
+  [B-4] Line 32: - No claim of metaphysical truth, cryptographic collision resistance, or unbounded composition.
+
+================================================================================
+Surface: RATIFICATION.md
+Class: Class I
+SHA-256: 1070426027fdb6fda40bb791029bcfb2a1d59f36997fa1ae8d87683f0716f39d
+Line Count: 61
+Contradiction Found: NO
+Boundary Applicability & Supporting Citations (9 relevant citations):
+  [B-4] Line 9: **Milestone:** `P10-Core — Gate-Closed Bounded Composition`
+  [B-4] Line 16: This formal ratification marks the closure of the bounded composition milestone for **P10-Core**.
+  [B-5] Line 29: 1. **Bounded Synthetic Instance:** The `FourEvidence` formal domain model and executable certificate checker.
+  [B-4] Line 31: 3. **Bounded Typed Composition:** The 4-stage pipeline ($\text{Stage0} \to \text{Stage1} \to \text{Stage2} \to \text{Sta
+  [B-2] Line 44: 2. **No Cryptographic Guarantees:** The synthetic `Digest` model is a lossless identity-like mathematical wrapper provin
+  [B-4] Line 45: 3. **No Unbounded Composition:** Ratification covers solely the finite 4-stage chain; unbounded transfinite progressions
+  [B-5] Line 46: 4. **No Global P10 Soundness:** Proved for the bounded instance, not as a universal metatheorem over arbitrary untyped p
+  [B-1] Line 47: 5. **No Ontological Truth:** In accordance with the foundational P10 demarcation:
+  ... (1 additional supporting citations in file)
+
+================================================================================
+Surface: AXIOM_AUDIT.md
+Class: Class II
+SHA-256: bde9d351f0b63d4176a459f07730ebd7c430af2b1c1ba2f62a5b3395c27be415
+Line Count: 43
+Contradiction Found: NO
+Boundary Applicability & Supporting Citations (1 relevant citations):
+  [B-2] Line 39: synthetic `Evidence` value (`structure Digest where evidence : Evidence`) and
+
+================================================================================
+Surface: GATE_RESPONSE.md
+Class: Class II
+SHA-256: 787f1a04c899997d235ac9cc5649c32a3c58e44a89635076715da706f19cb98a
+Line Count: 43
+Contradiction Found: NO
+Boundary Applicability & Supporting Citations (4 relevant citations):
+  [B-6] Line 13: - **C-04 / inert flags:** Replaced with witness-bearing certificates (`targetWitness`, `checkedWitness`, `certificateWit
+  [B-2] Line 26: ### Parametric Changelog: Synthetic `Digest` Type (G-01)
+  [B-2] Line 37: The `Digest` type was intentionally redefined to enable a constructive, machine-checked non-vacuity witness without post
+  [B-2] Line 42: - [`P10Core/Instances/FourEvidence/Model.lean`](P10Core/Instances/FourEvidence/Model.lean) was modified solely to define
+
+================================================================================
+Surface: GATE_CLOSURE.md
+Class: Class II
+SHA-256: 4a6a97289212a5f2e799c00e8c613569e294740042ecca508ebffc18b40b4c88
+Line Count: 66
+Contradiction Found: NO
+Boundary Applicability & Supporting Citations (12 relevant citations):
+  [B-2] Line 13: | **G-01** | Digest type change & synthetic model | **DISCLOSED & CLOSED** | `GATE_RESPONSE.md`, `README.md` (§3.Layer2.
+  [B-3] Line 16: | **G-04** | Collapsed predicates in synthetic instance | **DISCLOSED** | `README.md` (§3.Layer2.6), `RELEASE_NOTES.md` 
+  [B-5] Line 16: | **G-04** | Collapsed predicates in synthetic instance | **DISCLOSED** | `README.md` (§3.Layer2.6), `RELEASE_NOTES.md` 
+  [B-6] Line 19: | **G-07** | Certificate witness gating vs conclusion | **DISCLOSED** | `README.md` (§3.Layer2.1), `reviews/GateProbe.le
+  [B-2] Line 27: ### G-01: Parametric Changelog & Synthetic Digest Transparency
+  [B-2] Line 28: - **Fact:** The synthetic `Digest` structure was changed from `value : Nat` to `evidence : Evidence` to allow a construc
+  [B-2] Line 29: - **Documentation:** A formal Parametric Changelog table is published in `GATE_RESPONSE.md`. `README.md` and `AXIOM_AUDI
+  [B-3] Line 43: ### G-04: Collapsed Semantics Disclosure
+  ... (4 additional supporting citations in file)
+
+================================================================================
+Surface: spec/P10-Core-v0.1.md
+Class: Class III
+SHA-256: bac94b9ffcf56168b17bfbb8109b8e839abd7d8a8659ead3af9169b8309cf587
+Line Count: 401
+Contradiction Found: NO
+Boundary Applicability & Supporting Citations (1 relevant citations):
+  [B-1] Line 21: `Truth_M(c)` is an external semantic assertion relative to a model or intended interpretation \(M\). `Supports_P(e,c,v)`
+
+================================================================================
+Surface: spec/P10-Core-v0.2.md
+Class: Class III
+SHA-256: 49dfef0ed07a334adcfa57a23fcbffca186586802dbc7efcc6721d46ed3e0348
+Line Count: 540
+Contradiction Found: NO
+Boundary Applicability & Supporting Citations (2 relevant citations):
+  [B-1] Line 23: `Truth_M(c)` is an external semantic assertion relative to a model or intended interpretation \(M\). `Supports_P(e,c,v)`
+  [B-2] Line 298: covering parser correctness, canonicalization correctness, digest binding/collision assumptions, and faithful implementa
+
+================================================================================
+Surface: spec/P10-Core-v0.2.1.md
+Class: Class III
+SHA-256: f7f102a368ba9da221ef5b56474a6abdb2928a045f4c2802d6cf1ad09e145094
+Line Count: 690
+Contradiction Found: NO
+Boundary Applicability & Supporting Citations (6 relevant citations):
+  [B-1] Line 23: `Truth_M(c)` is an external semantic assertion relative to a model or intended interpretation \(M\). `Supports_P(e,c,v,κ
+  [B-6] Line 207: is an inductive relation indexed by the verdict. Its constructors are disjoint by construction. Define `PreflightOK` to 
+  [B-2] Line 393: covering parser correctness, canonicalization correctness, and digest binding/collision assumptions. They MUST appear in
+  [B-6] Line 611: kappa := certificate(pf, Q, witness = verified_conditions)
+  [B-6] Line 618: kappa := certificate(pf, Q, witness = not_verified_conditions)
+  [B-2] Line 664: The next formal step is one deliberately synthetic Lean instance. A suitable seed claim is: “exactly four evidence entri
+
+================================================================================
+Surface: CITATION.cff
+Class: Class IV
+SHA-256: 5482c8d0e6dd74630b4a1711ff779f57d2a51084d4fbdeae6f3b32d4739e048f
+Line Count: 19
+Contradiction Found: NO
+Boundary Applicability & Supporting Citations (0 relevant citations):
+  [N/A] Non-claim prose / provenance record (no normative boundary assertions).
+
+================================================================================
+Surface: LICENSE
+Class: Class IV
+SHA-256: c10a33172510741a43040ba53ba285fbd2cf94862943f0e8a8832b6c6da6d4f5
+Line Count: 190
+Contradiction Found: NO
+Boundary Applicability & Supporting Citations (0 relevant citations):
+  [N/A] Non-claim prose / provenance record (no normative boundary assertions).
+
+================================================================================
+Surface: manifests/SHA256SUMS_v0.2.0-composition
+Class: Class IV
+SHA-256: 9b22c630ba13a5436a4fc79ad38b8a97c44c701ef5949581179815fa7113f23d
+Line Count: 15
+Contradiction Found: NO
+Boundary Applicability & Supporting Citations (0 relevant citations):
+  [N/A] Non-claim prose / provenance record (no normative boundary assertions).
+
+================================================================================
+Surface: manifests/SHA256SUMS_v0.2.1-gatefix
+Class: Class IV
+SHA-256: cd53bcc009df4a289295c66aa3ae869dc4e3d6128483732997d4a5b5dfbbf710
+Line Count: 22
+Contradiction Found: NO
+Boundary Applicability & Supporting Citations (0 relevant citations):
+  [N/A] Non-claim prose / provenance record (no normative boundary assertions).
+
+================================================================================
+Surface: manifests/SHA256SUMS_v0.2.2-gateclosure
+Class: Class IV
+SHA-256: 7bece17f8e8ce88f1f6db9ca074f86b6010f185460fbb0c44a152e7a96d8c5cb
+Line Count: 30
+Contradiction Found: NO
+Boundary Applicability & Supporting Citations (0 relevant citations):
+  [N/A] Non-claim prose / provenance record (no normative boundary assertions).
+
+================================================================================
+Surface: baselines/P10-Core-v0.2.0-composition.zip.sha256
+Class: Class IV
+SHA-256: 6661366bfdd897454c2d55ebb8d79c634b90ee6769a7093a6a53e0bd1ae54ce3
+Line Count: 1
+Contradiction Found: NO
+Boundary Applicability & Supporting Citations (0 relevant citations):
+  [N/A] Non-claim prose / provenance record (no normative boundary assertions).
+
+================================================================================
+Surface: reviews/GATE_v0.2.0-composition_CLAUDE_001.md
+Class: Class V
+SHA-256: 284de2924a576667cde2807c3766c2f70b68797534f5e5f5ade55bb39e7215cd
+Line Count: 106
+Contradiction Found: NO
+Boundary Applicability & Supporting Citations (4 relevant citations):
+  [B-1] Line 11: **Not received:** `P10Core/Spec/*`, `P10Core/Model/Calculus.lean`, `Instances/FourEvidence/Checker.lean`, `Proofs/FourEv
+  [B-1] Line 21: - Evidence: `ls /mnt/user-data/uploads/` returns 4 files. `Proofs/Composition.lean` line 24 calls `FourEvidence.checkCer
+  [B-6] Line 88: - **Item 6's specific attack surface is clean.** `FidelityRel1/2/3` are plain structural equalities between fields of id
+  [B-5] Line 92: - **`RELEASE_NOTES.md` "Not claimed" block is correctly scoped** — semantic truth, global P10 soundness, collision resis
+
+================================================================================
+Surface: reviews/GATE_v0.2.1-gatefix_CLAUDE_002.md
+Class: Class V
+SHA-256: d6174235c3f639671acc5f1ba69a8a23f30c8c232e0007011e87fbb62fc5c7b3
+Line Count: 137
+Contradiction Found: NO
+Boundary Applicability & Supporting Citations (12 relevant citations):
+  [B-1] Line 13: | `grep` for `sorry`/`admit`/`axiom`, and for `Truth_M` | none in any `.lean`; `Truth_M` appears only in prose |
+  [B-6] Line 31: **C-04 inert flags — FIXED, with a precise residual.** Free booleans are gone; `TransitionCertificate1/2/3` carry `targe
+  [B-2] Line 52: - Claim affected: "the gatefix **only** supplies a concrete synthetic digest implementation and replaces the composition
+  [B-2] Line 61: - Second-order consequence, and the one worth stating plainly: the residual premise `DigestModel.injective` was not disc
+  [B-2] Line 62: - Minimal fix: a Parametric Changelog entry (old definition, new definition, reason) and one sentence in README: the dig
+  [B-6] Line 108: **G-07 — witness data gates acceptance but appears in no conclusion**
+  [B-6] Line 110: - Evidence: probe D shows the witness is checked (`check1 … = false` on mismatch), while `localSound1`'s proof discards 
+  [B-1] Line 119: - **Item 4 — no `Truth_M`.** Confirmed by grep across all `.lean` sources: the identifier does not exist. `Supports` bot
+  ... (4 additional supporting citations in file)
+
+=== T1 SURFACE ADJUDICATION COMPLETE: 0 CONTRADICTIONS ACROSS ALL CLASSES I - V ===

@@ -1,0 +1,66 @@
+# Gate Closure Report — P10-Core v0.2.2-gateclosure
+
+**Milestone:** `P10-Core / Composition Layer — Final Gate Closure`  
+**Base Release:** `v0.2.1-gatefix` (Claude Gate 002 Verdict: **PASS WITH LIMITATIONS**)  
+**Status:** **READY FOR GATE CLOSURE CHECK** (Not self-assigned PASS)  
+
+---
+
+## 1. Disposition of Claude Gate 002 Limitations (G-01 through G-07)
+
+| Finding | Class | Disposition | Remediating Files & Proof Artifacts |
+|---|---|---|---|
+| **G-01** | Digest type change & synthetic model | **DISCLOSED & CLOSED** | `GATE_RESPONSE.md`, `README.md` (§3.Layer2.5), `AXIOM_AUDIT.md` |
+| **G-02** | Baseline manifest path & coverage defect | **CLOSED** | `baselines/P10-Core-v0.2.0-composition.zip`, `manifests/SHA256SUMS_v0.2.0-composition` |
+| **G-03** | Manifest coverage & anchor | **CLOSED** | `manifests/SHA256SUMS_v0.2.2-gateclosure`, `scripts/verify.sh` |
+| **G-04** | Collapsed predicates in synthetic instance | **DISCLOSED** | `README.md` (§3.Layer2.6), `RELEASE_NOTES.md` |
+| **G-05** | `GlobalSupport` semantics & abstention | **DISCLOSED & DEMONSTRATED** | `README.md` (§3.Layer2.3), `reviews/GateProbe.lean` (`probeA`) |
+| **G-06** | Origin condition theorem promotion (`probeF`) | **CLOSED** | `P10Core/Proofs/Composition.lean` (`verifiedGlobalSupport_implies_originConditions`) |
+| **G-07** | Certificate witness gating vs conclusion | **DISCLOSED** | `README.md` (§3.Layer2.1), `reviews/GateProbe.lean` (`probeD`, `probeE`) |
+| **CLOSE-02** | Frozen baseline archive immutability | **CLOSED** | `baselines/P10-Core-v0.2.0-composition.zip` (`a86501aab0f3...`) |
+| **CLOSE-03** | Adversarial probe suite bytes & probe B restoration | **CLOSED** | `reviews/GateProbe_CLAUDE_002_original.lean`, `reviews/GateProbeB.lean` |
+
+---
+
+## 2. Detailed Technical Remediation
+
+### G-01: Parametric Changelog & Synthetic Digest Transparency
+- **Fact:** The synthetic `Digest` structure was changed from `value : Nat` to `evidence : Evidence` to allow a constructive, machine-checked injectivity proof (`fun {e1 e2} h => by cases h; rfl`) without asserting an unverified cryptographic collision-resistance axiom.
+- **Documentation:** A formal Parametric Changelog table is published in `GATE_RESPONSE.md`. `README.md` and `AXIOM_AUDIT.md` explicitly disclose that the digest in this instance is a lossless mathematical wrapper demonstrating non-vacuity and inhabitation; no physical cryptographic hash compression is claimed.
+
+### G-02 & CLOSE-02: Predecessor Archive Immutability
+- **Resolution:** The predecessor archive [`baselines/P10-Core-v0.2.0-composition.zip`](baselines/P10-Core-v0.2.0-composition.zip) is strictly restored to its original, immutable byte-exact state (`a86501aab0f35d055087d5793b897260635b441fb51d12dc6d99cd0229a0fc89`), matching `manifests/SHA256SUMS_v0.2.1-gatefix`.
+- **Manifest Provenance:** Following doctrine Check 6, the archive is **not modified in place**. The historical `BASELINE_MANIFEST.sha256` inside the zip is noted as a mislabelled v0.1.0 snapshot; the canonical, repo-relative manifest for the v0.2.0 predecessor tree is carried externally in [`manifests/SHA256SUMS_v0.2.0-composition`](manifests/SHA256SUMS_v0.2.0-composition).
+
+### GOV-01: Governance & Chain of Authority ($H$)
+- **Correction:** In accordance with P10 formal architecture, terminal ratification $H$ and tagging/merging to `main` is strictly reserved for the human ratifier (Ivan). Agent actions are strictly bounded to candidate preparation under status **`SPREMNO ZA GEJT` / `READY FOR GATE CLOSURE CHECK`**. Premature git push/tagging was retracted, and candidate deliverables are packaged for external gate evaluation prior to human ratification.
+
+### CLOSE-03: Adversarial Probe Lineage & Restored Probe B
+- **Byte-Exact Delivery:** Shipped Claude's original verbatim probe file as [`reviews/GateProbe_CLAUDE_002_original.lean`](reviews/GateProbe_CLAUDE_002_original.lean) matching exact digest `2427da6ec2cd545baa541885929782d5601130db9eba4e9a3268a763e401495e`.
+- **Restored Probe B:** Shipped restored Probe B (testing forged `.verified` certificate over non-supporting evidence, refuting composition) as [`reviews/GateProbeB.lean`](reviews/GateProbeB.lean) matching exact digest `3c41bd86f905fec1ea3175c2e1878e573bd32b8681e61b4a9480b37aab9f1310`.
+- **Verification:** Both compile cleanly (`exit 0`) against the built library via `lake env lean`.
+
+### G-04: Collapsed Semantics Disclosure
+- `README.md` explicitly discloses the 4 collapsed/redundant predicates of the synthetic `FourEvidence` instance:
+  1. `runCompleted := fun _ _ => True` (discharged by `trivial`);
+  2. `checksSucceeded := fun _ _ => True` (discharged by `trivial`);
+  3. `evaluable` and `operationalizable` coincide (`fun c => c.operationalizable`);
+  4. `noProtocolFault c e := e.admissible = true` is implied by the preflight check.
+
+### G-05: Protocol Support vs Claim Truth
+- `README.md` clarifies that `GlobalSupport P x0 x1 x2 x3` attests that the protocol's evidentiary evaluation rules were faithfully executed for the output verdict; it does not declare ontological truth.
+- `reviews/GateProbe.lean` reproduces Claude's `probeA`: a chain with 3 evidence entries where expected is 4 soundly terminates with `GlobalSupport` and verdict `NotDemonstrated`, while `¬verifiedSem` holds.
+
+### G-06: Formal Theorem Promotion (`probeF`)
+- Promoted into [`P10Core/Proofs/Composition.lean`](P10Core/Proofs/Composition.lean):
+  ```lean
+  theorem verifiedGlobalSupport_implies_originConditions
+      (P : Protocol) (x0 : Stage0) (x1 : Stage1) (x2 : Stage2) (x3 : Stage3)
+      (h : GlobalSupport P x0 x1 x2 x3) (hv : x3.verdict = Verdict.verified) :
+      verifiedSem (x0.claim, x0.evidence)
+  ```
+- Kernel dependency report: **zero axioms**.
+- Proves that when the pipeline terminates in `Verified`, empirical conditions hold on the original `Stage0` input pair.
+
+### G-07: Witness Guarding Discipline
+- Clarified in `README.md`: transition certificates (`targetWitness`, `checkedWitness`, `certificateWitness`) serve as executable structural guards gating stage transition acceptance (`check = false` upon mismatch). They do not act as redundant premises in the proved mathematical conclusions.

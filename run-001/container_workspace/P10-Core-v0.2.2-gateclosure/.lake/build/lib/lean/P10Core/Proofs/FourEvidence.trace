@@ -1,0 +1,33 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["4d89a701a40e5fe4.olean"],
+  "m": false,
+  "i": "c68322f273b6d143.ilean",
+  "c": "fef895915bd10cb6.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/workspace/.lake/build/lib/lean /root/.elan/toolchains/leanprover--lean4---v4.34.0/bin/lean /workspace/P10Core/Proofs/FourEvidence.lean -o /workspace/.lake/build/lib/lean/P10Core/Proofs/FourEvidence.olean -i /workspace/.lake/build/lib/lean/P10Core/Proofs/FourEvidence.ilean -c /workspace/.lake/build/ir/P10Core/Proofs/FourEvidence.c --setup /workspace/.lake/build/ir/P10Core/Proofs/FourEvidence.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["deps",
+   [["p10_core/P10Core:extraDep", [["@p10_core:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["P10Core.Instances.FourEvidence.Checker transitive imports (legacy)",
+       "abf1b5b933065cd7"],
+      ["P10Core.Instances.FourEvidence.Checker:importAllArts",
+       "76753496ff3e5fa3"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.34.0, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b",
+   "a1c6c7aa3e9abfe7"],
+  ["/workspace/P10Core/Proofs/FourEvidence.lean", "0e94a137922704af"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: P10Core.Proofs.FourEvidence", "6d5428233b12357f"],
+  ["Package.id?: (some p10_core)", "28902b89de205eed"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "1de557528df8ba1d"}

@@ -1,0 +1,9 @@
+{"plugins": [],
+ "package": "p10_core",
+ "options": {},
+ "name": "P10Core.Model.Calculus",
+ "isModule": false,
+ "importArts":
+ {"P10Core.Spec.Core":
+  [["/workspace/.lake/build/lib/lean/P10Core/Spec/Core.olean"]]},
+ "dynlibs": []}

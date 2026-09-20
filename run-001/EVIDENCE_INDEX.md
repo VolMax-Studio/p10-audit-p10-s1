@@ -21,7 +21,12 @@
 | `EV-07` | [`evidence/07_adversarial_probes.txt`](evidence/07_adversarial_probes.txt) | Probe 1 (`reviews/GateProbe_CLAUDE_002_original.lean` [SHA: `2427da6...`]) compiled exit 0; Probe 2 (`reviews/GateProbeB.lean` [SHA: `3c41bd8...`]) compiled exit 0 |
 | `EV-08` | [`evidence/08_t1_claim_discipline.txt`](evidence/08_t1_claim_discipline.txt) | Identifier `Truth_M` count = 0 in all `.lean` files; Demarcation B-1 through B-6 verified in mandatory carriers and preserved in aggregate across Classes I-V; `RATIFICATION.md` correctly scoped |
 | `EV-09` | [`evidence/09_t3_self_application_demarcation.txt`](evidence/09_t3_self_application_demarcation.txt) | Origin conditions theorem concludes `verifiedSem (x0.claim, x0.evidence)` directly about Stage 0; Claude Gate PASS treated as input evidence ($E^*$), not proof of self-soundness; Gödel/Löb boundaries preserved |
-| `EV-10` | [`evidence/10_failure_taxonomy_evaluation.txt`](evidence/10_failure_taxonomy_evaluation.txt) | Explicit adjudication of conditions F-01 through F-08 (all PASS); §7 procedural fault checks (zero faults) |
+| `EV-10` | [`evidence/10_failure_taxonomy_evaluation.txt`](evidence/10_failure_taxonomy_evaluation.txt) | Initial checklist evaluation of conditions F-01 through F-08 and §7 procedural fault checks (reclassified as derived checklist) |
+| `EV-11` | [`evidence/11_container_reproduction.txt`](evidence/11_container_reproduction.txt) | Clean-room isolated Debian 13 container execution logs: 30/30 manifest OK, `lake build` 12/12 jobs OK, line-for-line 18-row strict fail-closed diff OK, probes exit 0 |
+| `EV-12` | [`evidence/12_full_tree_integrity_scan.txt`](evidence/12_full_tree_integrity_scan.txt) | Full-tree scan of all 14 `.lean` files (including `reviews/`): 0 `sorry`, 0 `admit`, 0 user `axiom`, 0 `Truth_M` |
+| `EV-13` | [`evidence/13_t1_surface_adjudication.txt`](evidence/13_t1_surface_adjudication.txt) | Exhaustive mechanical audit across all 17 prose/provenance surfaces in Classes I through V: 0 contradictions against B-1..B-6 |
+| `EV-14` | [`evidence/14_failure_taxonomy_mapping.md`](evidence/14_failure_taxonomy_mapping.md) | Formal derived failure taxonomy mapping each F-01..F-08 and §7 check to underlying empirical raw verification logs |
+| `EV-15` | [`evidence/15_candidate_boundary_review.txt`](evidence/15_candidate_boundary_review.txt) | Boundary review of `P10_AUDIT_P10_S1_REPORT_CANDIDATE.md` confirming zero overclaims and zero premature verdict assertion |
 
 ---
 

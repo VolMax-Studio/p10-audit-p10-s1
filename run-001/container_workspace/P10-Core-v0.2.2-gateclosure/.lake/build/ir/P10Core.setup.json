@@ -1,0 +1,25 @@
+{"plugins": [],
+ "package": "p10_core",
+ "options": {},
+ "name": "P10Core",
+ "isModule": false,
+ "importArts":
+ {"P10Core.Spec.Core":
+  [["/workspace/.lake/build/lib/lean/P10Core/Spec/Core.olean"]],
+  "P10Core.Proofs.PositiveWitness":
+  [["/workspace/.lake/build/lib/lean/P10Core/Proofs/PositiveWitness.olean"]],
+  "P10Core.Proofs.FourEvidence":
+  [["/workspace/.lake/build/lib/lean/P10Core/Proofs/FourEvidence.olean"]],
+  "P10Core.Proofs.Composition":
+  [["/workspace/.lake/build/lib/lean/P10Core/Proofs/Composition.olean"]],
+  "P10Core.Model.Rules":
+  [["/workspace/.lake/build/lib/lean/P10Core/Model/Rules.olean"]],
+  "P10Core.Model.Calculus":
+  [["/workspace/.lake/build/lib/lean/P10Core/Model/Calculus.olean"]],
+  "P10Core.Instances.FourEvidence.Model":
+  [["/workspace/.lake/build/lib/lean/P10Core/Instances/FourEvidence/Model.olean"]],
+  "P10Core.Instances.FourEvidence.Composition":
+  [["/workspace/.lake/build/lib/lean/P10Core/Instances/FourEvidence/Composition.olean"]],
+  "P10Core.Instances.FourEvidence.Checker":
+  [["/workspace/.lake/build/lib/lean/P10Core/Instances/FourEvidence/Checker.olean"]]},
+ "dynlibs": []}
