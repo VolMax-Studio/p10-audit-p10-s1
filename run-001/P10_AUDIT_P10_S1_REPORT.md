@@ -8,6 +8,8 @@
 **Preregistration Specification:** [`P10-AUDIT-P10-S1_PREREG.md`](P10-AUDIT-P10-S1_PREREG.md) (SHA-256: `4ff99c98ef2a043c726a93e15ebe6a7a40737bf1225826f9c88a8ce181e9eec2`)  
 **Freeze Commit:** `3fd073cb64b52214bfed65a4d07a4178a17b50b8`  
 **Evidence Trace Commit:** `fc5fac7`  
+**Run Status:** `ADJUDICATED / EXECUTION CLOSED`  
+**Issuance Status:** `PENDING HUMAN RATIFICATION`  
 
 ---
 
@@ -110,11 +112,12 @@ Adjudication of the audit outcome is strictly governed by the pre-registered 7-s
 [Step 6: Documented Non-Blocking Limitations Evaluation]
   Are all T1, T2, T3 criteria satisfied, but with documented non-blocking limitations?
   └── Evaluated: YES.
-      All T1, T2, and T3 criteria are fully satisfied, and the release explicitly operates under four 
-      pre-registered, non-blocking epistemic limitations:
+      All T1, T2, and T3 criteria are fully satisfied, and the release explicitly operates under
+      four documented non-blocking limitations evaluated under pre-registered Step 6:
       1. Bounded Synthetic Domain: Formalization applies to synthetic FourEvidence instance (n=4);
       2. Abstract Injective Digest Wrapper: Digest demonstrates non-vacuity/injectivity, not cryptographic collision resistance;
-      3. Finite Bounded Pipeline: Composition theorem covers the 4-stage chain; unbounded transfinite progressions are explicitly bounded;
+      3. Finite Bounded Pipeline: Composition theorem covers the 4-stage chain; unbounded/transfinite composition
+         is outside the proved theorem scope, and incompleteness/reflection results constrain claims of a self-grounding terminus;
       4. Synthetic Soundness: Proof covers the typed pipeline, not universal untyped program soundness.
       
       Deterministic Outcome:
@@ -129,10 +132,10 @@ In accordance with the pre-registered rules $R^*$ and algorithmic precedence lad
 
 $$\boxed{\mathbf{VERDICT:\ VerifiedWithLimitations}}$$
 
-### Pre-Registered Non-Blocking Limitations Bound to this Verdict:
+### Documented Non-Blocking Limitations Evaluated under Pre-Registered Step 6:
 1. **Limitation L-1 (Bounded Model Instance):** The mechanized domain model is strictly bounded to the synthetic `FourEvidence` multi-stage pipeline; it does not model unbounded execution trees or external runtime agents.
 2. **Limitation L-2 (Digest Structure Scope):** Synthetic `Digest` injectivity is proved constructively as a lossless wrapper (`evidence : Evidence`) ensuring non-vacuity; it does not attest to cryptographic hash collision resistance.
-3. **Limitation L-3 (Finite Composition Boundary):** The composition theorem mechanically guarantees agreement and fidelity preservation across the designated 4-stage pipeline; transfinite progressions remain bounded by limitative incompleteness theorems.
+3. **Limitation L-3 (Finite Composition Boundary):** The composition theorem mechanically guarantees agreement and fidelity preservation across the designated 4-stage pipeline; unbounded/transfinite composition is outside the proved theorem scope, and incompleteness/reflection results constrain claims of a self-grounding terminus.
 4. **Limitation L-4 (Non-Global Scope):** Soundness is proved exclusively for the certified synthetic transition pipeline, asserting zero universal soundness over arbitrary untyped programs.
 
 ---
@@ -143,7 +146,7 @@ As a matter of scientific lineage and documentation hygiene, P10's treatment of 
 * **Gödel's Incompleteness Theorems (1931):** Relative unprovability of consistency within sufficiently expressive theories;
 * **Gentzen's Consistency Program (1936/1938):** Establishing consistency via well-founded transfinite induction ($\varepsilon_0$) from an explicit meta-level;
 * **Löb's Theorem (1955):** Impossibility of internal non-trivial reflection principles ($T \vdash (\mathrm{Prov}_T(\ulcorner\varphi\urcorner) \to \varphi) \implies T \vdash \varphi$);
-* **Tarski's Undefinability Theorem (1936):** Foundational separation of object-level truth from meta-level semantic predicates ($\mathrm{Truth}_M \neq \mathrm{Supports}_P$).
+* **Tarski's Semantic Separation (1936):** Foundational theoretical motivation for the distinction between truth semantics and internal formal predicates (informing the P10 design demarcation $\mathrm{Truth}_M \neq \mathrm{Supports}_P$).
 
 These foundational results motivate why `P10-audit-P10-s1` operates strictly as an evidentiary adjudication ($\mathrm{Supports}_{P^*}$), avoiding circularity and asserting zero ungrounded self-consistency.
 
@@ -151,14 +154,13 @@ These foundational results motivate why `P10-audit-P10-s1` operates strictly as 
 
 ## 7. Closure & Archival Record
 
-The execution of `P10-audit-P10-s1` is hereby **CLOSED**.  
-All raw outputs, test logs, container traces, and checksums are immutably archived in repository:
-
 ```text
-Commit SHA:  fc5fac7 (run-001 evidence commit)
-Target Tag:  VolMax-Studio/p10-core@v0.2.2-gateclosure
-Target SHA:  419175726025f2586dbb65ad92ec8812628880b5
-Archive SHA: 96a7e126068d35d29776a785d6581ef07c12f66a52d4a850b8464bf96ac41c88
-Prereg SHA:  4ff99c98ef2a043c726a93e15ebe6a7a40737bf1225826f9c88a8ce181e9eec2
-Verdict:     VerifiedWithLimitations
+Run Status:      ADJUDICATED / EXECUTION CLOSED
+Issuance Status: PENDING HUMAN RATIFICATION
+Commit SHA:      fc5fac7 (run-001 evidence commit)
+Target Tag:      VolMax-Studio/p10-core@v0.2.2-gateclosure
+Target SHA:      419175726025f2586dbb65ad92ec8812628880b5
+Archive SHA:     96a7e126068d35d29776a785d6581ef07c12f66a52d4a850b8464bf96ac41c88
+Prereg SHA:      4ff99c98ef2a043c726a93e15ebe6a7a40737bf1225826f9c88a8ce181e9eec2
+Verdict:         VerifiedWithLimitations
 ```

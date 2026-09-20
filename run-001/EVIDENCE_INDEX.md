@@ -27,6 +27,7 @@
 | `EV-13` | [`evidence/13_t1_surface_adjudication.txt`](evidence/13_t1_surface_adjudication.txt) | Exhaustive mechanical audit across all 17 prose/provenance surfaces in Classes I through V: 0 contradictions against B-1..B-6 |
 | `EV-14` | [`evidence/14_failure_taxonomy_mapping.md`](evidence/14_failure_taxonomy_mapping.md) | Formal derived failure taxonomy mapping each F-01..F-08 and §7 check to underlying empirical raw verification logs |
 | `EV-15` | [`evidence/15_candidate_boundary_review.txt`](evidence/15_candidate_boundary_review.txt) | Boundary review of `P10_AUDIT_P10_S1_REPORT_CANDIDATE.md` confirming zero overclaims and zero premature verdict assertion |
+| `EV-16` | [`evidence/16_final_report_boundary_review.txt`](evidence/16_final_report_boundary_review.txt) | Final boundary review of exact final bytes of `P10_AUDIT_P10_S1_REPORT.md` (SHA: `c7ffd64a...`) confirming zero self-application boundary faults |
 
 ---
 
