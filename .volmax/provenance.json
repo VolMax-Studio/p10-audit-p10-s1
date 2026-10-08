@@ -1,0 +1,25 @@
+{
+  "baseline_commit": "1b8c8687be075c717086ddec6713f165cc8e05a6",
+  "baseline_tree": "703416d98724fbe6fd2ee976ff4dd7b0c65dfd56",
+  "behavior": {
+    "callbacks": false,
+    "executable": false,
+    "network_calls": false,
+    "telemetry": false
+  },
+  "canonical_url": "https://github.com/VolMax-Studio/p10-audit-p10-s1",
+  "default_branch_at_recording": "master",
+  "license": {
+    "detected_spdx": null,
+    "files": [],
+    "note": "This provenance record does not grant or alter license rights."
+  },
+  "owner": "VolMax-Studio",
+  "record_id": "urn:volmax:github:VolMax-Studio/p10-audit-p10-s1:1b8c8687be075c717086ddec6713f165cc8e05a6",
+  "record_type": "volmax.repository-provenance",
+  "record_version": 1,
+  "recorded_at": "2026-10-08T19:36:14+00:00",
+  "repository": "VolMax-Studio/p10-audit-p10-s1",
+  "schema": "urn:volmax:provenance:v1",
+  "scope": "Repository identity and baseline commit only; historical tags, releases, evidence, authorship, and existing file bytes are unchanged."
+}
